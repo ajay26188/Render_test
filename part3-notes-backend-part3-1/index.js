@@ -2,11 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 
-app.use(express.json())
-app.use(cors())
 
-//To serve static frontend files (like a React or Vite build) from the backend server
-app.use(express.static('dist'))
 
 let notes = [
   {
@@ -25,6 +21,12 @@ let notes = [
     important: true,
   },
 ]
+
+app.use(express.json())
+app.use(cors())
+
+//To serve static frontend files (like a React or Vite build) from the backend server
+app.use(express.static('dist'))
 
 
 
